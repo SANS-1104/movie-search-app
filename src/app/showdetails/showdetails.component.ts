@@ -1,22 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Apidata } from '../apidata';
 import { ImdbService } from '../imdb.service';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-show-details',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './showdetails.component.html',
   styleUrls: ['./showdetails.component.css']
 })
 export class ShowDetailsComponent implements OnInit {
-  @Input() movie!: Apidata;
+  movie!: Apidata;
 
-  constructor(private imdbService: ImdbService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private imdbService: ImdbService
+  ) {}
 
   ngOnInit() {
-    // You can add any additional initialization logic here
+    this.route.paramMap.subscribe(params => {
+      const movieId = params.get('id');
+      if (movieId) {
+        this.loadMovieDetails(movieId);
+      }
+    });
+  }
+
+  private async loadMovieDetails(id: string) {
+    try {
+      this.movie = await this.imdbService.getMovieById(id) || {} as Apidata;
+    } catch (error) {
+      console.error('Error loading movie details:', error);
+    }
   }
 }

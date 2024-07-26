@@ -21,13 +21,9 @@ export class ImdbService {
     return await response.json() ?? [];
   }
 
-  async getApidataById(id: string): Promise<Apidata | undefined> {
-    const response = await fetch(`${this.apiUrl}/${id}`, {
-      headers: {
-        'x-rapidapi-host': this.apiHost,
-        'x-rapidapi-key': this.apiKey
-      }
-    });
-    return await response.json() ?? {};
+  // Fetch all movies and then find the one with the given ID
+  async getMovieById(id: string): Promise<Apidata | undefined> {
+    const movies = await this.getTopMovies();
+    return movies.find(movie => movie.id === id);
   }
 }
