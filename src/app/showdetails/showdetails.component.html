@@ -1,0 +1,13 @@
+<section class="details-outer-cont">
+    <div class="details-inner-cont">
+        <div class="details-image"> <img [src]="showAllMovies?.big_image" alt=""> </div>
+        <div class="details-desc">
+            <h1 class="title"> {{showAllMovies?.title}}, {{showAllMovies?.year}} </h1>
+            <h2 class="description"> {{showAllMovies?.description}} </h2>
+            <h3 class="rating">IMDB Rating : {{showAllMovies?.rating}} </h3>
+            <p class="watch-movie"> Want to Watch? <a [href]="showAllMovies?.imdb_link" target="_blank"> <i>Click Here</i>  </a> <i class="fa-solid fa-circle-play ml-4"></i></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</section>

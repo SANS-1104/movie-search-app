@@ -1,0 +1,37 @@
+.heading{
+    position: fixed;
+    top: 0;
+    background-color: rgba(185, 132, 185, 0.753);
+    padding: 1rem;
+    padding-bottom: 0;
+    padding-left: 4rem;
+    width: 100%;
+    z-index: 100;
+    color: rgb(97, 28, 97);
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 4.5rem;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+
+@media only screen and (max-width : 1024px) {
+    .heading h1{
+        transform: scale(0.8);
+        padding-left: 0;
+    }
+    .heading{
+        padding-left: 0;
+    }
+}
+
+
+
+@media only screen and (max-width : 320px) {
+    .heading h1{
+        transform: scale(0.5);
+    }
+}

@@ -1,0 +1,34 @@
+.each-card-prop{
+    height: 30rem;
+    width: 20rem;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    border-radius: 2rem;
+    text-align: center;
+    background-color: rgba(241, 187, 241, 0.404);
+    color: rgb(101, 14, 109);
+}
+
+.each-card-prop img{
+    height: 20rem;
+    width: 20rem;
+    border-top-left-radius: 1.8rem;
+    border-top-right-radius: 1.8rem;    
+}
+
+.see-details-link{
+    padding: 0.5rem 1.2rem 0;
+    position: relative;
+    bottom: 0;
+    font-weight: bold;
+    color: rgb(201, 16, 16);
+    font-size: 20px;
+}
+
+.see-details-link:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}

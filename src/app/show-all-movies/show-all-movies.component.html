@@ -1,0 +1,22 @@
+<div class="w-full">
+    <div class="diff-forms flex flex-wrap justify-around w-full">
+        <form class="flex flex-wrap items-start justify-start w-1/2" (ngSubmit)="filterResults(filter.value)">
+            <input type="text" placeholder="Search a Movie.." #filter>
+            <button type="submit">Search</button>
+        </form>
+    
+        <form>
+            <div class="genreFilter flex flex-wrap items-center justify-start">
+                <span class="mr-4 font-bold text-2xl mt-4">Filter By</span>
+                <button type="button" (click)="filterByGenre('Romance')">Romance</button>
+                <button type="button" (click)="filterByGenre('Action')">Action</button>
+                <button type="button" (click)="filterByGenre('Sci-Fi')">Sci-Fi</button>
+                <button type="button" (click)="filterByGenre('Horror')">Horror</button>
+            </div>
+        </form>
+    </div>
+   
+    <div class="movie-cont flex flex-wrap items-start justify-evenly w-full mt-16 px-8">
+        <app-get-top-movies *ngFor="let movie of filteredLocationList" [movie]="movie"></app-get-top-movies>
+    </div>
+</div>

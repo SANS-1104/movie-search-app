@@ -1,0 +1,15 @@
+<!-- <div *ngIf="movies">
+  <h1>{{ title }}</h1>
+  <div class="flex flex-wrap items-center justify-start w-full">
+    <div *ngFor="let movie of movies" class="w-80 flex flex-col flex-wrap items-center border-4 mr-8 mb-8">
+      <img src="https://static.thenounproject.com/png/944120-200.png" alt="movie img" style="width: 100px; height: auto;">
+      movie title
+    </div>
+  </div>
+</div> -->
+
+<div class=" mr-32 mb-12 each-card-prop">
+  <img [src]="movie.image" alt="movie img" >
+  <h5 class="text-center font-bold text-2xl pt-4 px-4">{{movie.title}} </h5>
+  <a [routerLink]="['/details',movie.id]" class="see-details-link">See Details <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+</div>
