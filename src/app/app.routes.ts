@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { ShowAllMoviesComponent } from './show-all-movies/show-all-movies.component';
-import { ShowdetailsComponent } from './showdetails/showdetails.component';
+import { ShowDetailsComponent } from './showdetails/showdetails.component';
 
 export const routes: Routes = [
     {
@@ -9,6 +9,6 @@ export const routes: Routes = [
     },
     {
         path:'details/:id',
-        component: ShowdetailsComponent,
+        component: ShowDetailsComponent,
     }
 ];

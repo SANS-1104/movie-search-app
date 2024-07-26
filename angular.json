@@ -72,14 +72,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CINESPHERE-Your-Movie-Search-App:build"
+            "buildTarget": "CINESPHERE-Your-Movie-Search-App:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CINESPHERE-Your-Movie-Search-App:build:production"
+              "buildTarget": "CINESPHERE-Your-Movie-Search-App:build:production"
             },
             "development": {
-              "browserTarget": "CINESPHERE-Your-Movie-Search-App:build:development"
+              "buildTarget": "CINESPHERE-Your-Movie-Search-App:build:development"
             }
           },
           "defaultConfiguration": "development"
